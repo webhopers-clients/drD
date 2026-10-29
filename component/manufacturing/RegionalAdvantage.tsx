@@ -30,7 +30,7 @@ export default function RegionalAdvantage({
   ];
 
   return (
-    <section className="py-16 sm:py-24 px-6 bg-white">
+    <section className="py-16 sm:py-24  bg-white">
       <div className="wrapper m-auto">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Left Column: Authentic Photo & Brand Highlight */}

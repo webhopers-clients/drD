@@ -30,7 +30,7 @@ export default function CompanyDifferentiators({
   ];
 
   return (
-    <section className="bg-gradient-to-r from-[#253746] to-[#162836] text-white py-18 sm:py-24 px-6">
+    <section className="bg-linear-to-r from-[#253746] to-[#162836] text-white py-18 sm:py-24 ">
       <div className="wrapper m-auto">
         <div className="max-w-3xl mb-12">
           <TagBadge

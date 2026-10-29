@@ -42,7 +42,7 @@ export default function TargetAudience() {
   ];
 
   return (
-    <section className="py-16 sm:py-24 px-6 bg-color-secondary">
+    <section className="py-16 sm:py-24 bg-color-secondary">
       <div className="wrapper m-auto">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Left Column: Heading & Context */}

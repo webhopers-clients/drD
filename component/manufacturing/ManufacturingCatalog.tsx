@@ -115,7 +115,7 @@ export default function ManufacturingCatalog() {
   ];
 
   return (
-    <section id="products" className="py-16 sm:py-24 px-6 bg-white">
+    <section id="products" className="py-16 sm:py-24 bg-white">
       <div className="wrapper m-auto">
         <div className="text-center mb-12">
           <TagBadge text="800+ APPROVED FORMULATIONS" className="mb-3" />

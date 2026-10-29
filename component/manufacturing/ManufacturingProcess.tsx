@@ -26,7 +26,7 @@ export default function ManufacturingProcess() {
   ];
 
   return (
-    <section className="py-16 sm:py-24 px-6 bg-color-secondary">
+    <section className="py-16 sm:py-24 bg-color-secondary">
       <div className="wrapper m-auto">
         <div className="text-center mb-14">
           <TagBadge text="PRODUCTION WORKFLOW" className="mb-3" />

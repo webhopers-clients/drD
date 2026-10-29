@@ -42,7 +42,7 @@ export default function QuickSpecifications() {
   ];
 
   return (
-    <section className="py-16 sm:py-20 px-6 bg-color-secondary">
+    <section className="py-16 sm:py-20 bg-color-secondary">
       <div className="wrapper m-auto max-w-5xl">
         <div className="text-center mb-10">
           <TagBadge text="PLANT SPECIFICATIONS" className="mb-3" />

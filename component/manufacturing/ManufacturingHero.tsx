@@ -15,7 +15,7 @@ export default function ManufacturingHero({
 }: ManufacturingHeroProps) {
   return (
     <section className="bg-white pt-10 sm:pt-14 pb-12">
-      <div className="wrapper m-auto px-6">
+      <div className="wrapper m-auto">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Heading & Content */}
           <div className="lg:col-span-7">
