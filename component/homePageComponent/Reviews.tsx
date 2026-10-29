@@ -1,6 +1,7 @@
 import React from "react";
 import TestimonialCard from "../common/TestinomialCard";
 import SwipeSlider from "../common/SwipeSlider";
+import { HomePageEndPoints } from "@/lib/service/HomePageEndPoints";
 
 interface ReviewItem {
   rating: number;
@@ -53,17 +54,33 @@ async function getReviews(): Promise<ReviewItem[]> {
   return [];
 }
 
-export default async function Reviews({ homeTestimonials }: any) {
+interface ReviewsProps {
+  homeTestimonials?: any;
+}
+
+export default async function Reviews({ homeTestimonials }: ReviewsProps = {}) {
+  // Call all required APIs within the component in parallel for standalone reusability
+  const [fetchedTestimonials, apiReviews] = await Promise.all([
+    homeTestimonials
+      ? Promise.resolve(homeTestimonials)
+      : HomePageEndPoints.homeTestimonials().catch(() => null),
+    getReviews().catch(() => []),
+  ]);
+
+  const testimonialsData = homeTestimonials || fetchedTestimonials;
   const { title, testimonials: defaultTestimonials } =
-    homeTestimonials?.data || {};
+    testimonialsData?.data || {};
   const { heading_start, heading_bold, heading_end } = title || {};
 
-  const apiReviews = await getReviews();
   const reviewList =
     apiReviews.length > 0 ? apiReviews : defaultTestimonials || [];
 
+  if (!reviewList || reviewList.length === 0) {
+    return null;
+  }
+
   return (
-    <div className="bg-color-secondary py-14 md:py-16">
+    <section className="bg-color-secondary py-14 md:py-16">
       <div className="flex flex-col items-center text-center pb-6 mx-auto">
         <h2 className="text-3xl md:text-[3rem] font-light mb-6">
           {heading_start || "Customer"}
@@ -74,14 +91,12 @@ export default async function Reviews({ homeTestimonials }: any) {
         </h2>
       </div>
       <div className="wrapper mx-auto px-4 sm:px-6 lg:px-0">
-        {reviewList && reviewList.length > 0 && (
-          <SwipeSlider>
-            {reviewList.map((t: any, i: number) => (
-              <TestimonialCard key={i} {...t} />
-            ))}
-          </SwipeSlider>
-        )}
+        <SwipeSlider>
+          {reviewList.map((t: any, i: number) => (
+            <TestimonialCard key={i} {...t} />
+          ))}
+        </SwipeSlider>
       </div>
-    </div>
+    </section>
   );
 }

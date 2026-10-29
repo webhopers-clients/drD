@@ -166,11 +166,10 @@ export default async function FacilityPage() {
                 (data: any, index: any) => (
                   <div
                     key={index}
-                    className={`grid md:grid-cols-2 gap-8 sm:gap-16 items-center  ${
-                      index % 2 !== 0
-                        ? "md:[&>*:first-child]:order-2 md:[&>*:last-child]:order-1"
-                        : ""
-                    }`}
+                    className={`grid md:grid-cols-2 gap-8 sm:gap-16 items-center  ${index % 2 !== 0
+                      ? "md:[&>*:first-child]:order-2 md:[&>*:last-child]:order-1"
+                      : ""
+                      }`}
                   >
                     {/* TEXT SECTION */}
                     <div className="space-y-5 text-description leading-[170%]">
